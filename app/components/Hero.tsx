@@ -39,8 +39,8 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           <Image
             src="/main.jpg" // Ensure this image is in the /public folder
             alt="NextCore team collaboration" // Use dict if available: dict.hero.imageAlt
-            layout="fill"
-            objectFit="cover"
+            fill // Replaces layout="fill"
+            style={{ objectFit: "cover" }} // Replaces objectFit="cover"
             priority // Prioritize loading the hero image
             quality={85}
           />

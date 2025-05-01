@@ -66,8 +66,8 @@ const Features: React.FC<FeaturesProps> = ({ lang }) => {
                     <Image 
                       src={feature.image} 
                       alt={`UI for ${feature.title}`}
-                      layout="fill" // Fills the parent container
-                      objectFit="cover" // Equivalent to CSS object-fit: cover
+                      fill // Replaces layout="fill"
+                      style={{ objectFit: "cover" }} // Replaces objectFit="cover"
                       priority={index < 2} // Prioritize loading images in the first row
                     />
                   </div>
@@ -89,8 +89,8 @@ const Features: React.FC<FeaturesProps> = ({ lang }) => {
                     <Image 
                       src={feature.image} 
                       alt={`UI for ${feature.title}`}
-                      layout="fill"
-                      objectFit="cover"
+                      fill // Replaces layout="fill"
+                      style={{ objectFit: "cover" }} // Replaces objectFit="cover"
                     />
                   </div>
                 </div>
