@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; // Import Link for internal navigation if needed
+
 import styles from './Footer.module.css';
 // Adjust the import path as necessary for your i18n setup
 import { getDictionary } from '@/app/i18n/utils/languageUtils'; 

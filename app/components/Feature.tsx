@@ -11,19 +11,10 @@ interface FeatureItem {
   image: string;
 }
 
-// Define the structure for the dictionary's features section
-interface DictFeatures {
-  title: string;
-  items: FeatureItem[];
-}
-
 // Define the props for the Features component to accept lang
 interface FeaturesProps {
   lang: Lang; // Expecting Lang type from your i18n setup
 }
-
-// Define the Feature type based on the dictionary structure
-interface Feature extends FeatureItem {}
 
 const Features: React.FC<FeaturesProps> = ({ lang }) => {
   // Get the dictionary based on the lang prop
@@ -31,7 +22,7 @@ const Features: React.FC<FeaturesProps> = ({ lang }) => {
 
   // Define the features array directly using the dictionary
   // This structure mirrors the one in the original Astro component
-  const features: Feature[] = [
+  const features: FeatureItem[] = [
     {
       title: dict.features.items[0].title,
       description: dict.features.items[0].description,

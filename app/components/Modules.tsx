@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Modules.module.css';
 // Adjust the import path as necessary
-import { getDictionary } from '@/app/i18n/utils/languageUtils'; 
+
 import type { Lang } from '@/app/i18n/utils/types';
 
 interface ModulesProps {
@@ -12,7 +12,7 @@ interface ModulesProps {
 // Add content and logic as needed.
 const Modules: React.FC<ModulesProps> = ({ lang }) => {
   // const dict = getDictionary(lang); // Uncomment if dictionary is needed
-
+  console.log(lang);
   return (
     <section className={styles.modules}>
       {/* Content for Modules section goes here */}
