@@ -2,11 +2,11 @@ import MainContent from '@/app/components/MainContent'; // Assuming component pa
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'NextCore - Simplify your ISP management and boost your performance',
+  title: 'NextCore - Simplifica la gestión de tu ISP y potencia tu rendimiento',
 };
 
-export default function Home() {
+export default function EsHome() {
   return (
-    <MainContent lang="en" />
+    <MainContent lang="es" />
   );
 }

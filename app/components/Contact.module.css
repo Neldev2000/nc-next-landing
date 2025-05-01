@@ -1,0 +1,98 @@
+.contact {
+  background-color: white;
+  padding: 3rem 1rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  text-align: center;
+  color: #4B5563;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+
+@media (min-width: 640px) {
+  .formRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Apply specific grid template for email/phone row on larger screens */
+  .formRow.emailPhone {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  /* Keep company row as 1 column even on larger screens */
+  .formRow.companyRow {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Note: The :has selector is not widely supported in all browsers */
+/* We'll handle the company row styling with an explicit class .companyRow */
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #247e6717;
+  border: none;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #6B7280;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  /* Assuming --caribbean-green-600 is defined globally or replace with hex */
+  background-color: #068768; /* Example fallback for var(--caribbean-green-600) */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.submitButton:hover {
+  /* Assuming --caribbean-green-700 is defined globally or replace */
+  background-color: #056d53; /* Example fallback for var(--caribbean-green-700) */
+}
+
+.input:focus, .textarea:focus {
+  outline: 2px solid #068768; /* Example fallback for var(--caribbean-green-600) */
+  outline-offset: -2px;
+} 

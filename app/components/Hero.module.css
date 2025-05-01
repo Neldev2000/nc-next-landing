@@ -1,0 +1,152 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow: hidden; /* Prevent content overflow issues */
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* Ensure background is behind content */
+}
+
+/* Styles for the Next.js Image component wrapper */
+.backgroundImageWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.heroContent h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgb(226, 232, 240); /* Consider using a more specific color like slate-200 */
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+.ctaButton {
+  display: inline-block;
+  /* Use fallback color or ensure var is globally defined */
+  background-color: #068768; /* Example fallback for var(--caribbean-green-600) */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: #056d53; /* Example fallback for var(--caribbean-green-700) */
+  transform: translateY(-2px);
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroContent p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+  .heroContent {
+    max-width: 80%;
+  }
+
+  .heroContent h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroContent p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .heroContent {
+    max-width: 64rem;
+  }
+
+  .heroContent h1 {
+    font-size: 4rem;
+  }
+
+  .heroContent p {
+    font-size: 1.5rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra large devices */
+@media (min-width: 1280px) {
+  .heroContent h1 {
+    font-size: 4.5rem;
+  }
+
+  .heroContent p {
+    font-size: 1.75rem;
+    max-width: 70%;
+  }
+}
+
+/* Handle very small heights */
+@media (max-height: 600px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .heroContent p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+} 

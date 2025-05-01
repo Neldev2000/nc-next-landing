@@ -1,0 +1,275 @@
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0; /* Ensure it spans full width */
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  /* Assuming CSS variables are defined globally */
+  padding: var(--spacing-md, 1rem) 0; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+}
+
+.logoImg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl, 2rem);
+}
+
+.logo {
+  color: #334155; /* --slate-700 */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--font-size-xl, 1.25rem);
+}
+
+.navLinks {
+  display: none; /* Hidden by default, shown in media query */
+  align-items: center;
+  gap: var(--spacing-xl, 1.5rem);
+}
+
+.navLink {
+  color: #64748b; /* --slate-500 */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer; /* Add pointer for clickable links */
+}
+
+.navLink:hover {
+  color: #334155; /* --slate-700 */
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+}
+
+.languageSelector {
+  display: none; /* Hidden by default, shown in media query */
+}
+
+.languageSelect {
+  padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+  border: 1px solid #e2e8f0; /* --slate-200 */
+  border-radius: var(--radius-md, 0.375rem);
+  background-color: white;
+  color: #334155; /* --slate-700 */
+  font-size: var(--font-size-sm, 0.875rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 38px; /* Match login button height */
+}
+
+.loginButton {
+  display: none; /* Hidden by default, shown in media query */
+  padding: var(--spacing-sm, 0.5rem) var(--spacing-lg, 1rem);
+  background-color: #068768; /* --caribbean-green-600 */
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-md, 0.375rem);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #056d53; /* --caribbean-green-700 */
+}
+
+.menuButton {
+  display: block; /* Shown by default, hidden in media query */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b; /* --slate-500 */
+  padding: var(--spacing-sm, 0.5rem);
+  border-radius: var(--radius-md, 0.375rem);
+  transition: all 0.2s ease;
+}
+
+.menuButton:hover {
+  color: #334155; /* --slate-700 */
+  background-color: #f3f4f6; /* --gray-100 */
+}
+
+.menuIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block; /* Ensure SVG displays correctly */
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobileMenuActive {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 101;
+}
+
+.mobileMenuActive .menuOverlay {
+  opacity: 1;
+}
+
+.mobileMenuContent {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 90%; /* Ensure it doesn't exceed screen width */
+  height: 100%;
+  background-color: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 5rem 0 2rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  z-index: 102;
+}
+
+.mobileMenuActive .mobileMenuContent {
+  transform: translateX(0);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transition-delay: 0.1s; /* Slight delay for content */
+}
+
+.mobileMenuActive .mobileNavLinks {
+  opacity: 1;
+  transition-delay: 0.2s; /* Match Astro animation */
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #4b5563; /* --slate-600 */
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease, opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+  cursor: pointer; /* Add pointer */
+}
+
+/* Staggered animation */
+.mobileMenuActive .mobileNavLink:nth-child(1) { transition-delay: 0.2s; opacity: 1; transform: translateX(0); }
+.mobileMenuActive .mobileNavLink:nth-child(2) { transition-delay: 0.25s; opacity: 1; transform: translateX(0); }
+.mobileMenuActive .mobileNavLink:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateX(0); }
+/* Apply transition for language selector wrapper and login link */
+.mobileMenuActive .mobileLanguageSelectorWrapper { transition-delay: 0.35s; opacity: 1; transform: translateX(0); }
+.mobileMenuActive .mobileLogin { transition-delay: 0.4s; opacity: 1; transform: translateX(0); }
+
+.mobileLanguageSelectorWrapper {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.2s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobileLanguageSelectorWrapper .languageSelect {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+.mobileNavLink:hover {
+  background-color: #f3f4f6; /* --gray-100 */
+  color: #1f2937; /* --slate-800 */
+}
+
+.mobileIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mobileLogin {
+  /* Inherit .mobileNavLink styles */
+  margin-top: 1rem;
+  background-color: #068768; /* --caribbean-green-600 */
+  color: white !important; /* Ensure text is white */
+}
+
+.mobileLogin:hover {
+  background-color: #056d53; /* --caribbean-green-700 */
+}
+
+.mobileLogin .mobileIcon {
+  color: white;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+  }
+
+  .languageSelector {
+    display: block;
+  }
+
+  .loginButton {
+    display: inline-flex;
+  }
+
+  .menuButton {
+    display: none;
+  }
+} 

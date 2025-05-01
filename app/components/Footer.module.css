@@ -1,0 +1,148 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0 2rem;
+  width: 100%;
+  background-color: #fafefd;
+}
+
+.separator {
+  width: 100%;
+  height: 1.5px;
+  background-color: #e2e8f0; /* --slate-200 */
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.logo {
+  display: inline-flex;
+  height: 2rem;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.logomark {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.companyName {
+  font-family: 'Sen', sans-serif;
+  font-weight: 700;
+  color: #334155; /* --slate-700 */
+  font-size: 1.75rem;
+  letter-spacing: -1.12px;
+  line-height: 1.75rem;
+  white-space: nowrap;
+}
+
+.socialIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  color: #cbd5e1; /* --slate-300 */
+  line-height: 0;
+  transition: color 0.2s ease;
+}
+
+.socialIcons a:hover {
+  color: #94a3b8; /* --slate-400 */
+}
+
+.footerNav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.navColumn h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 550;
+  color: #334155; /* --slate-700 */
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.navColumn a {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  color: #cbd5e1; /* --slate-300 */
+  font-size: 0.9375rem;
+  line-height: 1.25rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navColumn a:hover {
+  color: #94a3b8; /* --slate-400 */
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+  .footer {
+    padding: 6rem 0 3.25rem;
+  }
+
+  .footerContent {
+    flex-direction: row;
+    gap: 3.25rem;
+    padding: 0 2rem;
+  }
+
+  .brandSection {
+    flex: 1;
+    justify-content: space-between;
+    min-height: 150px;
+  }
+
+  .footerNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.25rem;
+    width: auto;
+  }
+
+  .navColumn {
+    width: auto;
+    min-width: 160px;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1024px) {
+  .footerContent {
+    padding: 0 1rem;
+  }
+
+  .navColumn {
+    width: 200px;
+  }
+} 

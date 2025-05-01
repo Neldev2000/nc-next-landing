@@ -1,0 +1,363 @@
+.pricing {
+  width: 100%;
+  /* Assuming --slate-700 is defined globally */
+  color: #334155; /* Fallback for var(--slate-700) */
+  padding: 52px 0;
+  background-color: #fafefd; /* Added background color */
+}
+
+.pricingContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 52px;
+  color: #1a2724;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.pricingTable {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pricingHeader {
+  display: grid;
+  /* Adjust grid template slightly for clarity */
+  grid-template-columns: minmax(250px, 1.2fr) repeat(3, minmax(200px, 1fr)); 
+  border-bottom: 1px solid #496e6433;
+}
+
+.emptyCell {
+  padding: 32px;
+}
+
+.planHeader {
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes button down */
+}
+
+/* Vertical separator line */
+.planHeader:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 32px;
+  bottom: 32px;
+  width: 1px;
+  background-color: #496e6433;
+}
+
+.planInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.planHeader h3 {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  color: #334155; /* var(--slate-700) */
+  margin: 0; /* Reset margin */
+}
+
+.planHeader.highlighted h3,
+.planHeader.highlighted .price {
+  color: #056d53; /* var(--caribbean-green-700) */
+}
+
+.price {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  color: #334155; /* var(--slate-700) */
+  margin: 0; /* Reset margin */
+}
+
+/* Button styles (base) */
+.planHeader button {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 0.375rem; /* var(--radius-md) */
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none; /* Reset default border */
+  margin-top: auto; /* Pushes button to bottom if planHeader uses flex */
+}
+
+.btnNormal {
+  background: transparent;
+  border: 1.5px solid #cbd5e1; /* var(--slate-300) */
+  color: #334155; /* var(--slate-700) */
+}
+
+.btnHighlighted {
+  background: #068768; /* var(--caribbean-green-600) */
+  border: none;
+  color: white;
+}
+
+.btnNormal:hover {
+  background: #f1f5f9; /* var(--slate-100) */
+}
+
+.btnHighlighted:hover {
+  background: #056d53; /* var(--caribbean-green-700) */
+}
+
+.pricingBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureRow {
+  display: grid;
+  /* Match header grid */
+  grid-template-columns: minmax(250px, 1.2fr) repeat(3, minmax(200px, 1fr)); 
+  border-bottom: 1px solid #496e6433;
+}
+
+.featureRow:last-child {
+  border-bottom: none;
+}
+
+.featureName {
+  padding: 24px 32px;
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-size: 17px;
+  color: #334155; /* var(--slate-700) */
+  display: flex;
+  align-items: center;
+}
+
+.featureCell {
+  padding: 24px 32px;
+  text-align: center;
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-size: 17px;
+  color: #334155; /* var(--slate-700) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Vertical separator line */
+.featureCell:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background-color: #496e6433;
+}
+
+.featureCell svg {
+  width: 24px;
+  height: 24px;
+  color: #10b981; /* var(--caribbean-green-500) */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .pricingContainer {
+    padding: 0 16px;
+  }
+
+  .pricingHeader,
+  .featureRow {
+    /* Adjust grid for smaller screens */
+    grid-template-columns: minmax(200px, 1.2fr) repeat(3, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+    padding: 0 20px;
+  }
+}
+
+/* Mobile view: Stack plans and features */
+@media (max-width: 768px) {
+  .pricing {
+    padding: 24px 0;
+    background-color: #fff;
+  }
+
+  .pricingContainer {
+    padding: 0 16px;
+    max-width: 600px;
+  }
+
+  .pricingTable {
+    border-radius: 0;
+    background: transparent;
+    overflow: visible; /* Allow shadows/borders */
+  }
+
+  .pricingHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0; /* Remove padding */
+    border: none;
+    margin-bottom: 32px;
+  }
+
+  .emptyCell {
+    display: none;
+  }
+
+  .planHeader {
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0; /* Add subtle border */
+  }
+
+  .planHeader::after { /* Remove vertical line */
+    display: none;
+  }
+
+  .planHeader.highlighted {
+    border: 2px solid #068768; /* var(--caribbean-green-600) */
+    padding: 30px;
+    position: relative;
+    margin-top: 16px; /* Add space for the badge */
+  }
+
+  /* Recommended badge */
+  .recommendedBadge {
+    position: absolute;
+    top: -14px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #068768; /* var(--caribbean-green-600) */
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .pricingBody {
+    padding: 0; /* Remove padding */
+  }
+
+  .featureRow {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    border-bottom: 1px solid #496e6433;
+  }
+
+  .featureName {
+    padding: 0;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #334155; /* var(--slate-700) */
+  }
+
+  .featureCell {
+    padding: 4px 0;
+    border: none;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    gap: 12px;
+    justify-content: start; /* Align grid content left */
+    text-align: left;
+  }
+
+  .featureCell::after { /* Remove vertical line */
+    display: none;
+  }
+
+  /* Plan name label for mobile */
+  .planLabelMobile {
+    font-weight: 500;
+    color: #4b5563; /* Slightly lighter than feature name */
+    font-size: 14px;
+  }
+
+  .featureCell span, 
+  .featureCell svg {
+    font-size: 14px;
+    color: #334155; /* var(--slate-700) */
+    justify-self: start; /* Align value/icon left */
+  }
+
+  .featureCell svg {
+    width: 16px;
+    height: 16px;
+    color: #10b981; /* var(--caribbean-green-500) */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+    padding: 0 24px;
+    margin-bottom: 32px;
+  }
+
+  .pricingContainer {
+    padding: 0 16px;
+  }
+
+  .planHeader {
+    padding: 20px;
+  }
+
+  .planHeader.highlighted {
+    padding: 26px; /* Adjust padding */
+    margin-top: 14px; /* Adjust margin for badge */
+  }
+
+  .recommendedBadge {
+    top: -12px; /* Fine-tune badge position */
+  }
+
+  .featureName {
+    font-size: 15px;
+  }
+
+  .featureCell {
+    grid-template-columns: 70px 1fr;
+    gap: 8px;
+  }
+
+  .planLabelMobile {
+    font-size: 14px;
+  }
+
+  .featureCell span {
+    font-size: 14px;
+  }
+} 

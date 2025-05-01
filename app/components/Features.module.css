@@ -1,0 +1,115 @@
+.features {
+  padding: 52px 0;
+  z-index: 2;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+}
+
+.sectionTitle {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 52px;
+  color: #1a2724;
+  text-align: center;
+}
+
+.featuresGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.featuresRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+}
+
+.featureCard {
+  flex: 1;
+  min-width: 300px;
+  height: 480px; /* Maintain height */
+  background-color: #247e6717;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  display: flex; /* Added to help structure content */
+  flex-direction: column; /* Added */
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 40px;
+  /* No need to set height or flex grow here, let content determine size */
+}
+
+.cardHeader h3 {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+  color: #1a2724;
+  margin: 0; /* Reset default margins */
+}
+
+.cardHeader p {
+  font-family: 'Outfit', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1a2724;
+  margin: 0; /* Reset default margins */
+}
+
+.cardImage {
+  flex-grow: 1; /* Allow image container to fill remaining space */
+  width: 100%;
+  position: relative; /* Needed for next/image with layout='fill' */
+  min-height: 200px; /* Example minimum height, adjust as needed */
+}
+
+/* Styles for next/image itself are handled via props like layout, objectFit */
+
+@media (max-width: 768px) {
+  .featureCard {
+    min-width: 100%; /* Ensure full width on smaller screens */
+    /* Adjust height if necessary for smaller screens */
+  }
+
+  .sectionTitle {
+    font-size: 36px; /* Adjust font size for smaller screens */
+    line-height: 40px;
+  }
+
+  .cardHeader h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .cardHeader p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+} 
