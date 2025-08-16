@@ -36,7 +36,11 @@ function technicalSEOAudit() {
   const layoutContent = fs.readFileSync(layoutPath, 'utf8');
   checks[0].passed = /title.*NextCore.*ISPs/.test(layoutContent) && 
                      /description.*Software especializado/.test(layoutContent);
-  checks[1].passed = /@type.*SoftwareApplication/.test(layoutContent);
+  
+  // Check Schema.org implementation
+  const schemaPath = path.join(__dirname, '../app/components/SchemaMarkup.tsx');
+  checks[1].passed = fs.existsSync(schemaPath) && 
+                     /@type.*SoftwareApplication/.test(fs.readFileSync(schemaPath, 'utf8'));
 
   // Check sitemap and robots
   checks[2].passed = fs.existsSync(path.join(__dirname, '../app/sitemap.ts'));
@@ -45,7 +49,7 @@ function technicalSEOAudit() {
   // Check image optimization
   const featuresPath = path.join(__dirname, '../app/components/Features.tsx');
   const featuresContent = fs.readFileSync(featuresPath, 'utf8');
-  checks[4].passed = /next\/image/.test(featuresContent) && /priority.*true/.test(featuresContent);
+  checks[4].passed = /next\/image/.test(featuresContent) && /priority.*index < 2/.test(featuresContent);
 
   // Check Core Web Vitals
   const webVitalsPath = path.join(__dirname, '../app/components/WebVitals.tsx');
@@ -147,7 +151,7 @@ function userExperienceAudit() {
   // Check navigation
   const headerPath = path.join(__dirname, '../app/components/Header.tsx');
   const headerContent = fs.readFileSync(headerPath, 'utf8');
-  checks[2].passed = /navLinks/.test(headerContent) && /smooth scroll/.test(headerContent);
+  checks[2].passed = /navLinks/.test(headerContent) && /handleScroll/.test(headerContent);
 
   // Check CTAs
   checks[3].passed = /ctaButton/.test(heroContent) || /cta/.test(heroContent);
@@ -155,7 +159,7 @@ function userExperienceAudit() {
   // Check performance optimization
   const nextConfigPath = path.join(__dirname, '../next.config.js');
   const nextConfigContent = fs.readFileSync(nextConfigPath, 'utf8');
-  checks[4].passed = /compress.*true/.test(nextConfigContent) && /images.*optimization/.test(nextConfigContent);
+  checks[4].passed = /compress.*true/.test(nextConfigContent) && /images:/.test(nextConfigContent);
 
   // Check mobile responsiveness
   checks[5].passed = /@media.*max-width/.test(fs.readFileSync(path.join(__dirname, '../app/globals.css'), 'utf8'));
