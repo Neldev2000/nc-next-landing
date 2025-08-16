@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './recursos.module.css';
+import styles from './resources.module.css';
 
 export const metadata = {
   title: "Recursos para ISPs | NextCore - Software de Gestión para Proveedores de Internet",
@@ -16,13 +16,13 @@ const RecursosPage = () => {
         {
           titulo: "Guía completa: Ciclo de vida del cliente FTTH",
           descripcion: "Aprende a gestionar clientes desde la captación hasta la instalación",
-          url: "/recursos/ciclo-vida-cliente-ftth",
+          url: "/resources/ftth-customer-lifecycle",
           tipo: "Guía"
         },
         {
           titulo: "Integración OZMap + NextCore: Mapeo de red FTTH",
           descripcion: "Optimiza tu red con la integración perfecta de mapeo",
-          url: "/recursos/integracion-ozmap-nextcore",
+          url: "/resources/ozmap-nextcore-integration",
           tipo: "Tutorial"
         }
       ]
@@ -33,13 +33,13 @@ const RecursosPage = () => {
         {
           titulo: "5 errores comunes al elegir software de gestión para ISPs",
           descripcion: "Evita los errores más frecuentes en la selección de software",
-          url: "/recursos/errores-software-isp",
+          url: "/resources/isp-software-selection-errors",
           tipo: "Artículo"
         },
         {
           titulo: "Integración SmartOLT: Gestión avanzada de OLTs",
           descripcion: "Maximiza el rendimiento de tu red con SmartOLT",
-          url: "/recursos/integracion-smartolt",
+          url: "/resources/smartolt-integration",
           tipo: "Tutorial"
         }
       ]
@@ -50,13 +50,13 @@ const RecursosPage = () => {
         {
           titulo: "Sistema de tickets especializado para ISPs",
           descripcion: "Optimiza tu soporte técnico con NextCore",
-          url: "/recursos/sistema-tickets-isp",
+          url: "/resources/isp-ticket-system",
           tipo: "Guía"
         },
         {
           titulo: "Automatización con FreeRadius para ISPs",
           descripcion: "Automatiza la autenticación de clientes",
-          url: "/recursos/automatizacion-freeradius",
+          url: "/resources/freeradius-automation",
           tipo: "Tutorial"
         }
       ]

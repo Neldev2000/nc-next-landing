@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lighthouse": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json --chrome-flags='--headless'",
     "lighthouse:html": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
-    "seo:audit": "node scripts/seo-audit.js"
+    "seo:audit": "node scripts/seo-audit.js",
+    "seo:enterprise": "node scripts/enterprise-seo-audit.js"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",

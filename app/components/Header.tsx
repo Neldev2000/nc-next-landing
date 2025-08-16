@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ lang }) => {
 
   const navLinks = [
     { href: '#features', text: dict.header.nav.features, icon: <FeaturesIcon /> },
-    { href: '/recursos', text: 'Recursos', icon: <FeaturesIcon /> }, // Add resources link
+    { href: '/resources', text: 'Resources', icon: <FeaturesIcon /> }, // Add resources link
     { href: '#pricing', text: dict.header.nav.pricing, icon: <PricingIcon /> },
     { href: '#contact', text: dict.header.nav.contact, icon: <ContactIcon /> },
   ];

@@ -14,47 +14,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/recursos`,
+      url: `${baseUrl}/resources`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
   ];
 
+  // Brand protection and disambiguation pages
+  const brandPages = [
+    {
+      url: `${baseUrl}/nextcore-isp`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+  ];
+
   // Dynamic resource pages (future blog posts)
   const resourcePages = [
     {
-      url: `${baseUrl}/recursos/ciclo-vida-cliente-ftth`,
+      url: `${baseUrl}/resources/ftth-customer-lifecycle`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/recursos/integracion-ozmap-nextcore`,
+      url: `${baseUrl}/resources/ozmap-nextcore-integration`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/recursos/errores-software-isp`,
+      url: `${baseUrl}/resources/isp-software-selection-errors`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/recursos/integracion-smartolt`,
+      url: `${baseUrl}/resources/smartolt-integration`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/recursos/sistema-tickets-isp`,
+      url: `${baseUrl}/resources/isp-ticket-system`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/recursos/automatizacion-freeradius`,
+      url: `${baseUrl}/resources/freeradius-automation`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
@@ -83,5 +93,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...basePages, ...resourcePages, ...anchorSections];
+  return [...basePages, ...brandPages, ...resourcePages, ...anchorSections];
 }
