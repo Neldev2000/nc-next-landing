@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SchemaMarkup from "./components/SchemaMarkup";
+import FAQSchema from "./components/FAQSchema";
 import WebVitals from "./components/WebVitals";
 
 const geistSans = Geist({
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <SchemaMarkup />
+        <FAQSchema />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />

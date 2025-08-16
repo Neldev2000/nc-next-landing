@@ -1,0 +1,436 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: var(--font-geist-sans);
+}
+
+.header {
+  text-align: center;
+  padding: 60px 0 40px;
+  background: linear-gradient(135deg, #06d6a0 0%, #1b9aaa 100%);
+  color: white;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Hero Section */
+.hero {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.heroContent h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  background: #06d6a0;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #06d6a0;
+}
+
+.primaryCta:hover {
+  background: #05c090;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(6, 214, 160, 0.3);
+}
+
+.secondaryCta {
+  background: transparent;
+  color: #06d6a0;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #06d6a0;
+}
+
+.secondaryCta:hover {
+  background: #06d6a0;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Comparison Table */
+.comparisonSection {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparisonSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.comparisonTable th {
+  background: #06d6a0;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.comparisonTable td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.featureName {
+  font-weight: 600;
+  background: #f8f9fa;
+  text-align: left !important;
+}
+
+.nextcoreCell {
+  background: #e8f5e8;
+  color: #2d5a2d;
+  font-weight: 600;
+}
+
+.competitorCell {
+  background: #fff5f5;
+  color: #5a2d2d;
+}
+
+/* Analysis Section */
+.analysisSection {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.analysisSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.competitorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.competitorCard {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.competitorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.nextcoreCard {
+  border-color: #06d6a0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e8f5e8 100%);
+  position: relative;
+}
+
+.nextcoreCard::before {
+  content: "🏆 RECOMENDADO";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #06d6a0;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.competitorHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.competitorHeader h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.category {
+  background: #e9ecef;
+  color: #666;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.score {
+  margin-top: 15px;
+}
+
+.scoreNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #06d6a0;
+}
+
+.scoreMax {
+  font-size: 1rem;
+  color: #666;
+}
+
+.prosCons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pros h4, .cons h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.pros ul, .cons ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pros li, .cons li {
+  padding: 5px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.pros li {
+  color: #2d5a2d;
+}
+
+.cons li {
+  color: #5a2d2d;
+}
+
+/* Specialized Section */
+.specializedSection {
+  background: linear-gradient(135deg, #06d6a0 0%, #1b9aaa 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.specializedSection h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.reason {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.reason h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.reason p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Cost Section */
+.costSection {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.costSection h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.costComparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.costCard {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+}
+
+.costCard h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.costBreakdown p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .heroContent h2 {
+    font-size: 1.5rem;
+  }
+  
+  .comparisonSection h2,
+  .analysisSection h2,
+  .specializedSection h2,
+  .costSection h2,
+  .ctaSection h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .prosCons {
+    grid-template-columns: 1fr;
+  }
+  
+  .competitorsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .costComparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .tableWrapper {
+    font-size: 0.9rem;
+  }
+  
+  .comparisonTable th,
+  .comparisonTable td {
+    padding: 10px 5px;
+  }
+}

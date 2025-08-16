@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 
 // Allowed paths that should be accessible on the landing site
-const ALLOWED_PATHS = ['/', '/es', '/en', '/pt', '/nextcore-isp', '/resources'];
+const ALLOWED_PATHS = ['/', '/es', '/en', '/pt', '/nextcore-isp', '/nextcore-vs-competitors', '/resources'];
 
 // Check if a path is a static asset (JS, CSS, images, etc.)
 function isStaticAsset(pathname: string): boolean {
