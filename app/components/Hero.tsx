@@ -31,14 +31,14 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
   };
 
   return (
-    <section className={styles.hero}>
+    <main className={styles.hero} role="main">
       <div className={styles.heroBackground}>
         {/* Use Next.js Image for background */}
         {/* Added a wrapper div for potentially easier styling/positioning if needed */}
         <div className={styles.backgroundImageWrapper}>
           <Image
             src="/main.jpg" // Ensure this image is in the /public folder
-            alt="NextCore team collaboration" // Use dict if available: dict.hero.imageAlt
+            alt="NextCore - Plataforma de gestión integral para ISPs" // Optimized alt text for SEO
             fill // Replaces layout="fill"
             style={{ objectFit: "cover" }} // Replaces objectFit="cover"
             priority // Prioritize loading the hero image
@@ -55,11 +55,12 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
           href="#contact" 
           className={styles.ctaButton}
           onClick={(e) => handleScroll(e, '#contact')} // Add smooth scroll handler
+          aria-label="Contactar con NextCore para gestión de ISPs"
         >
           {dict.hero.cta}
         </a>
       </div>
-    </section>
+    </main>
   );
 };
 

@@ -1,0 +1,686 @@
+# 🎨 DOCUMENTO DE PRINCIPIOS DE DISEÑO - NEXTCORE
+
+## �� INTRODUCCIÓN
+
+Este documento establece los principios fundamentales de diseño para la plataforma Nextcore, una solución SaaS especializada para Proveedores de Servicios de Internet (ISPs). El objetivo es crear una experiencia visual moderna, profesional y funcional que refleje la innovación tecnológica y la confiabilidad del sector.
+
+---
+
+## �� VISIÓN DE DISEÑO
+
+### **Propósito**
+Crear una interfaz que transmita:
+- **Profesionalismo**: Reflejar la seriedad del sector ISP
+- **Innovación**: Mostrar tecnología de vanguardia
+- **Confiabilidad**: Generar confianza en la solución
+- **Simplicidad**: Facilitar la adopción y uso
+
+### **Personalidad de Marca**
+- **Moderno pero estable**: Tecnología avanzada sin ser experimental
+- **Profesional pero accesible**: Serio sin ser intimidante
+- **Confiable pero innovador**: Seguro sin ser aburrido
+- **Especializado pero intuitivo**: Técnico sin ser complejo
+
+---
+
+## �� SISTEMA DE COLORES
+
+### **Paleta Principal**
+
+#### **Caribbean Green (Color Primario)**
+```css
+--caribbean-green: #06d6a0;
+--caribbean-green-dark: #05a67a;
+--caribbean-green-light: #0ef4b8;
+--caribbean-green-50: #ecfdf5;
+--caribbean-green-100: #d1fae5;
+--caribbean-green-200: #a7f3d0;
+--caribbean-green-300: #6ee7b7;
+--caribbean-green-400: #34d399;
+--caribbean-green-500: #06d6a0;
+--caribbean-green-600: #059669;
+--caribbean-green-700: #047857;
+--caribbean-green-800: #065f46;
+--caribbean-green-900: #064e3b;
+```
+
+**Uso:**
+- Botones principales y CTAs
+- Enlaces activos
+- Estados de éxito
+- Elementos de navegación clave
+
+#### **Teal Blue (Color Secundario)**
+```css
+--teal-blue: #118ab2;
+--soft-cyan: #06b6d4;
+--ocean-blue: #0ea5e9;
+--sky-blue: #38bdf8;
+```
+
+**Uso:**
+- Elementos secundarios
+- Información complementaria
+- Estados informativos
+- Gradientes y efectos
+
+#### **Neutros Modernos**
+```css
+--gray-50: #f9fafb;
+--gray-100: #f3f4f6;
+--gray-200: #e5e7eb;
+--gray-300: #d1d5db;
+--gray-400: #9ca3af;
+--gray-500: #6b7280;
+--gray-600: #4b5563;
+--gray-700: #374151;
+--gray-800: #1f2937;
+--gray-900: #111827;
+```
+
+**Uso:**
+- Texto principal (gray-800)
+- Texto secundario (gray-600)
+- Bordes y separadores (gray-200)
+- Fondos sutiles (gray-50)
+
+### **Gradientes Definidos**
+
+#### **Gradiente Primario**
+```css
+--gradient-primary: linear-gradient(135deg, #06d6a0 0%, #118ab2 100%);
+```
+**Uso:** Botones principales, elementos destacados
+
+#### **Gradiente Secundario**
+```css
+--gradient-secondary: linear-gradient(135deg, #0ef4b8 0%, #06b6d4 100%);
+```
+**Uso:** Elementos secundarios, efectos hover
+
+#### **Gradiente Glassmorphism**
+```css
+--gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+```
+**Uso:** Efectos de cristal, overlays
+
+#### **Gradiente Hero**
+```css
+--gradient-hero: linear-gradient(135deg, rgba(6, 214, 160, 0.1) 0%, rgba(17, 138, 178, 0.1) 100%);
+```
+**Uso:** Fondos de secciones hero
+
+---
+
+## 🔤 SISTEMA TIPOGRÁFICO
+
+### **Familia de Fuentes**
+```css
+--font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+```
+
+**Justificación:**
+- **Inter**: Moderna, legible, optimizada para pantallas
+- **Fallbacks**: Garantizar consistencia cross-platform
+
+### **Escala Tipográfica**
+```css
+--font-size-xs: 0.75rem;    /* 12px - Etiquetas pequeñas */
+--font-size-sm: 0.875rem;   /* 14px - Texto secundario */
+--font-size-base: 1rem;     /* 16px - Texto base */
+--font-size-lg: 1.125rem;   /* 18px - Texto destacado */
+--font-size-xl: 1.25rem;    /* 20px - Subtítulos */
+--font-size-2xl: 1.5rem;    /* 24px - Títulos H3 */
+--font-size-3xl: 1.875rem;  /* 30px - Títulos H2 */
+--font-size-4xl: 2.25rem;   /* 36px - Títulos H1 */
+--font-size-5xl: 3rem;      /* 48px - Títulos hero */
+--font-size-6xl: 3.75rem;   /* 60px - Títulos grandes */
+```
+
+### **Pesos de Fuente**
+- **300 (Light)**: Texto decorativo, elementos sutiles
+- **400 (Regular)**: Texto base, contenido principal
+- **500 (Medium)**: Texto destacado, etiquetas
+- **600 (SemiBold)**: Subtítulos, elementos importantes
+- **700 (Bold)**: Títulos, elementos críticos
+- **800 (ExtraBold)**: Títulos principales, CTAs
+
+### **Jerarquía Tipográfica**
+
+#### **H1 - Títulos Principales**
+- Tamaño: 3rem (48px)
+- Peso: 700 (Bold)
+- Uso: Páginas principales, secciones hero
+
+#### **H2 - Títulos de Sección**
+- Tamaño: 2.25rem (36px)
+- Peso: 700 (Bold)
+- Uso: Secciones principales
+
+#### **H3 - Subtítulos**
+- Tamaño: 1.875rem (30px)
+- Peso: 600 (SemiBold)
+- Uso: Subsecciones, características
+
+#### **H4 - Títulos Menores**
+- Tamaño: 1.5rem (24px)
+- Peso: 600 (SemiBold)
+- Uso: Cards, elementos específicos
+
+#### **Body Text**
+- Tamaño: 1rem (16px)
+- Peso: 400 (Regular)
+- Altura de línea: 1.6
+- Uso: Contenido principal
+
+---
+
+## 📐 SISTEMA DE ESPACIADO
+
+### **Escala de Espaciado**
+```css
+--spacing-xs: 0.25rem;   /* 4px - Espaciado mínimo */
+--spacing-sm: 0.5rem;    /* 8px - Espaciado pequeño */
+--spacing-md: 1rem;      /* 16px - Espaciado base */
+--spacing-lg: 1.5rem;    /* 24px - Espaciado grande */
+--spacing-xl: 2rem;      /* 32px - Espaciado extra */
+--spacing-2xl: 3rem;     /* 48px - Espaciado sección */
+--spacing-3xl: 4rem;     /* 64px - Espaciado página */
+```
+
+### **Aplicación del Espaciado**
+
+#### **Componentes**
+- Padding interno: `var(--spacing-md)` a `var(--spacing-lg)`
+- Margen entre elementos: `var(--spacing-sm)` a `var(--spacing-md)`
+- Espaciado de secciones: `var(--spacing-2xl)` a `var(--spacing-3xl)`
+
+#### **Grid y Layout**
+- Gap entre columnas: `var(--spacing-lg)`
+- Gap entre filas: `var(--spacing-md)`
+- Padding de contenedor: `var(--spacing-lg)`
+
+---
+
+## 🔲 SISTEMA DE BORDES Y RADIOS
+
+### **Border Radius**
+```css
+--border-radius-sm: 0.375rem;   /* 6px - Elementos pequeños */
+--border-radius-md: 0.5rem;     /* 8px - Elementos base */
+--border-radius-lg: 0.75rem;    /* 12px - Elementos grandes */
+--border-radius-xl: 1rem;       /* 16px - Cards, modales */
+--border-radius-2xl: 1.5rem;    /* 24px - Elementos destacados */
+--border-radius-full: 9999px;   /* Círculos, pills */
+```
+
+### **Bordes**
+```css
+--border-width: 1px;
+--border-width-thick: 2px;
+--border-width-thin: 0.5px;
+```
+
+### **Aplicación**
+- **Botones**: `var(--border-radius-lg)`
+- **Cards**: `var(--border-radius-xl)`
+- **Inputs**: `var(--border-radius-md)`
+- **Avatares**: `var(--border-radius-full)`
+
+---
+
+## �� SISTEMA DE SOMBRAS
+
+### **Jerarquía de Sombras**
+```css
+--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+--shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+--shadow-glow: 0 0 20px rgba(6, 214, 160, 0.3);
+```
+
+### **Aplicación**
+- **Elementos base**: `var(--shadow-sm)`
+- **Cards y contenedores**: `var(--shadow-md)`
+- **Elementos elevados**: `var(--shadow-lg)`
+- **Modales y overlays**: `var(--shadow-xl)`
+- **Efectos especiales**: `var(--shadow-glow)`
+
+---
+
+## ✨ SISTEMA DE GLASSMORPHISM
+
+### **Definición del Efecto**
+Glassmorphism combina:
+- Transparencia y blur
+- Bordes sutiles
+- Efectos de profundidad
+- Contraste con fondos
+
+### **Implementación**
+```css
+.glass {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-dark {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-glass);
+}
+```
+
+### **Aplicación**
+- **Headers**: Efecto glass con fondo transparente
+- **Cards**: Glassmorphism para elevación visual
+- **Modales**: Overlay glass para profundidad
+- **Navegación**: Glass effect para modernidad
+
+---
+
+## 🎭 SISTEMA DE MICROINTERACCIONES
+
+### **Principios**
+- **Sutileza**: Cambios graduales y naturales
+- **Propósito**: Cada interacción debe tener un objetivo claro
+- **Consistencia**: Patrones uniformes en toda la aplicación
+- **Rendimiento**: Animaciones optimizadas (60fps)
+
+### **Transiciones**
+```css
+--transition-fast: 150ms ease-in-out;
+--transition-normal: 300ms ease-in-out;
+--transition-slow: 500ms ease-in-out;
+```
+
+### **Efectos de Hover**
+
+#### **Botones**
+```css
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+```
+
+#### **Cards**
+```css
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+```
+
+#### **Enlaces**
+```css
+.link:hover {
+  color: var(--caribbean-green);
+  transform: translateX(2px);
+}
+```
+
+### **Animaciones de Entrada**
+- **Fade In Up**: Elementos que aparecen desde abajo
+- **Fade In Left**: Elementos que aparecen desde la izquierda
+- **Fade In Right**: Elementos que aparecen desde la derecha
+- **Scale In**: Elementos que crecen al aparecer
+
+---
+
+## �� SISTEMA RESPONSIVO
+
+### **Breakpoints**
+```css
+/* Mobile First */
+--breakpoint-sm: 640px;   /* Tablets pequeñas */
+--breakpoint-md: 768px;   /* Tablets */
+--breakpoint-lg: 1024px;  /* Laptops */
+--breakpoint-xl: 1280px;  /* Desktops */
+--breakpoint-2xl: 1536px; /* Pantallas grandes */
+```
+
+### **Estrategia Mobile-First**
+1. **Diseño base**: Mobile (320px - 640px)
+2. **Adaptación progresiva**: Aumentar complejidad según pantalla
+3. **Optimización**: Contenido y funcionalidad adaptados
+
+### **Grid System**
+```css
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+```
+
+---
+
+## 🧩 SISTEMA DE COMPONENTES
+
+### **Principios de Componentes**
+- **Reutilización**: Componentes modulares y flexibles
+- **Consistencia**: Comportamiento uniforme
+- **Accesibilidad**: Cumplir estándares WCAG
+- **Performance**: Optimizados para rendimiento
+
+### **Jerarquía de Componentes**
+
+#### **Atoms (Átomos)**
+- Botones
+- Inputs
+- Iconos
+- Tipografía
+
+#### **Molecules (Moléculas)**
+- Formularios
+- Cards
+- Navigation items
+- Search bars
+
+#### **Organisms (Organismos)**
+- Headers
+- Footers
+- Hero sections
+- Feature grids
+
+#### **Templates (Plantillas)**
+- Layouts de página
+- Grid systems
+- Spacing patterns
+
+#### **Pages (Páginas)**
+- Implementaciones específicas
+- Contenido único
+- Configuraciones particulares
+
+---
+
+## ♿ SISTEMA DE ACCESIBILIDAD
+
+### **Principios WCAG 2.1**
+- **Perceptible**: Información presentada de forma accesible
+- **Operable**: Interfaz navegable por múltiples medios
+- **Comprensible**: Información y operación comprensibles
+- **Robusto**: Compatible con tecnologías asistivas
+
+### **Implementación**
+
+#### **Contraste de Colores**
+- **Texto normal**: Mínimo 4.5:1
+- **Texto grande**: Mínimo 3:1
+- **Elementos UI**: Mínimo 3:1
+
+#### **Navegación por Teclado**
+- **Tab order**: Lógico y predecible
+- **Focus indicators**: Visibles y claros
+- **Skip links**: Para navegación rápida
+
+#### **Screen Readers**
+- **Alt text**: Descriptivo y funcional
+- **ARIA labels**: Para elementos complejos
+- **Semantic HTML**: Estructura semántica correcta
+
+---
+
+## �� PATRONES DE DISEÑO
+
+### **Hero Sections**
+- **Gradiente de fondo**: Sutil y moderno
+- **Tipografía grande**: Impacto visual
+- **CTA prominente**: Botón principal destacado
+- **Imagen de apoyo**: Relevante y optimizada
+
+### **Feature Cards**
+- **Glassmorphism**: Efecto moderno
+- **Iconos**: Consistentes y significativos
+- **Espaciado generoso**: Respiración visual
+- **Hover effects**: Interactividad sutil
+
+### **Pricing Tables**
+- **Plan destacado**: Visual hierarchy clara
+- **Comparación fácil**: Layout tabular
+- **CTAs claros**: Acción obvia
+- **Información completa**: Sin sorpresas
+
+### **Contact Forms**
+- **Validación visual**: Feedback inmediato
+- **Campos organizados**: Lógica de agrupación
+- **Submit claro**: Botón prominente
+- **Confirmation**: Feedback de éxito
+
+---
+
+## �� SISTEMA DE ESTADOS
+
+### **Estados de Interacción**
+
+#### **Default**
+- Color base del componente
+- Sin efectos especiales
+- Estado de reposo
+
+#### **Hover**
+- Cambio sutil de color
+- Elevación ligera
+- Transición suave
+
+#### **Active/Pressed**
+- Color más intenso
+- Transformación sutil
+- Feedback táctil
+
+#### **Focus**
+- Outline visible
+- Color de focus
+- Accesibilidad
+
+#### **Disabled**
+- Opacidad reducida
+- Cursor not-allowed
+- No interactividad
+
+### **Estados de Sistema**
+
+#### **Loading**
+- Spinner animado
+- Texto de estado
+- Bloqueo de interacción
+
+#### **Success**
+- Color verde
+- Icono de check
+- Mensaje confirmatorio
+
+#### **Error**
+- Color rojo
+- Icono de error
+- Mensaje explicativo
+
+#### **Warning**
+- Color amarillo
+- Icono de advertencia
+- Mensaje informativo
+
+---
+
+## 📊 SISTEMA DE ICONOGRAFÍA
+
+### **Principios**
+- **Consistencia**: Estilo uniforme
+- **Simplicidad**: Fácil reconocimiento
+- **Escalabilidad**: Vector-based
+- **Accesibilidad**: Alt text apropiado
+
+### **Tamaños**
+```css
+--icon-xs: 12px;
+--icon-sm: 16px;
+--icon-md: 20px;
+--icon-lg: 24px;
+--icon-xl: 32px;
+--icon-2xl: 48px;
+```
+
+### **Estilo**
+- **Stroke width**: 1.5px para iconos pequeños, 2px para grandes
+- **Corner radius**: 2px para esquinas redondeadas
+- **Color**: Heredar del texto o color específico
+
+---
+
+## 🎯 SISTEMA DE LAYOUT
+
+### **Grid System**
+```css
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+```
+
+### **Flexbox Utilities**
+```css
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+```
+
+### **Container System**
+```css
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.container-sm { max-width: 640px; }
+.container-md { max-width: 768px; }
+.container-lg { max-width: 1024px; }
+.container-xl { max-width: 1280px; }
+```
+
+---
+
+## 🎨 SISTEMA DE FONDOS
+
+### **Fondos Sólidos**
+- **Primary**: `var(--caribbean-green)`
+- **Secondary**: `var(--teal-blue)`
+- **Neutral**: `var(--gray-50)` a `var(--gray-900)`
+
+### **Fondos Gradientes**
+- **Hero**: `var(--gradient-hero)`
+- **Primary**: `var(--gradient-primary)`
+- **Secondary**: `var(--gradient-secondary)`
+
+### **Fondos Glassmorphism**
+- **Light**: `var(--gradient-glass)`
+- **Dark**: Glass effect con fondo oscuro
+
+### **Patrones de Fondo**
+- **Geométricos**: Formas sutiles y modernas
+- **Orgánicos**: Curvas suaves y naturales
+- **Técnicos**: Líneas y grids tecnológicos
+
+---
+
+## �� GUÍAS DE IMPLEMENTACIÓN
+
+### **CSS Modules**
+- **Nomenclatura**: BEM-like con camelCase
+- **Organización**: Por componente
+- **Variables**: Uso consistente de CSS custom properties
+- **Responsive**: Mobile-first approach
+
+### **Performance**
+- **Critical CSS**: Inline para above-the-fold
+- **Lazy loading**: Para imágenes y componentes
+- **Optimización**: Minificación y compresión
+- **Caching**: Headers apropiados
+
+### **Browser Support**
+- **Modern browsers**: Chrome 90+, Firefox 88+, Safari 14+
+- **Fallbacks**: Para características no soportadas
+- **Progressive enhancement**: Funcionalidad básica siempre disponible
+
+---
+
+## 🔄 PROCESO DE ITERACIÓN
+
+### **Fases de Desarrollo**
+1. **Wireframes**: Estructura básica
+2. **Mockups**: Diseño visual detallado
+3. **Prototipos**: Interactividad básica
+4. **Implementación**: Código funcional
+5. **Testing**: Validación y refinamiento
+
+### **Métricas de Éxito**
+- **Performance**: Core Web Vitals
+- **Accessibility**: WCAG compliance
+- **Usability**: User testing feedback
+- **Conversion**: CTA effectiveness
+
+### **Mantenimiento**
+- **Documentación**: Actualizada y accesible
+- **Versioning**: Control de cambios
+- **Testing**: Automatizado y manual
+- **Feedback**: Incorporación continua
+
+---
+
+## �� RECURSOS Y REFERENCIAS
+
+### **Inspiración**
+- **Material Design 3**: Principios modernos
+- **Apple Human Interface Guidelines**: Simplicidad y elegancia
+- **Microsoft Fluent Design**: Glassmorphism y profundidad
+- **Stripe**: Profesionalismo y claridad
+
+### **Herramientas**
+- **Figma**: Diseño y prototipado
+- **Storybook**: Documentación de componentes
+- **Lighthouse**: Performance y accessibility
+- **Chrome DevTools**: Debugging y testing
+
+### **Estándares**
+- **WCAG 2.1**: Accesibilidad
+- **Web Content Accessibility Guidelines**
+- **CSS Grid**: Layout moderno
+- **CSS Custom Properties**: Variables dinámicas
+
+---
+
+## 🎯 CONCLUSIÓN
+
+Este sistema de diseño proporciona una base sólida y coherente para crear una experiencia de usuario excepcional en Nextcore. Los principios establecidos aseguran:
+
+- **Consistencia visual** en todos los componentes
+- **Escalabilidad** para futuras expansiones
+- **Accesibilidad** para todos los usuarios
+- **Performance** optimizada
+- **Mantenibilidad** del código
+
+La implementación de estos principios resultará en una interfaz moderna, profesional y funcional que refleje la calidad y confiabilidad de la plataforma Nextcore.
+
